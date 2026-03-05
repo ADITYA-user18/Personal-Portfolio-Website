@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #030303;
+    --foreground: #ffffff;
+    --accent: #3b82f6; /* Electric Blue */
+    --accent-dark: #1d4ed8;
+    --accent-light: #60a5fa;
+    --secondary: #0a0a0a;
+    
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-secondary: var(--secondary);
+  
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@layer base {
+  * {
+    cursor: none; /* We will build a custom cursor next */
+    @apply border-white/10;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-space-grotesk);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-grid-main {
+  position: relative;
+}
+
+.bg-grid-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, #030303 80%);
+  pointer-events: none;
+}
+
+
+/* Thunder Glow Effect */
+@keyframes thunder-glow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.4); 
+    opacity: 1; 
+  }
+  92% { opacity: 1; }
+  93% { 
+    text-shadow: 0 0 30px #fff, 0 0 60px #3b82f6; 
+    opacity: 0.6; 
+  }
+  94% { opacity: 1; }
+  95% { 
+    text-shadow: 0 0 100px #fff; 
+    opacity: 0.3; 
+  }
+  96% { opacity: 1; }
+}
+
+.thunder-text {
+  animation: thunder-glow 4s linear infinite;
+}
+
+/* Horizontal Section Utilities */
+.heading-xl {
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.horizontal-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+
+
+@keyframes textShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.text-shine {
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #3b82f6 40%,
+    #60a5fa 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textShine 4s linear infinite;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.skill-category, h2, h1, p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0); /* Forces Hardware Acceleration */
+  backface-visibility: hidden;
 }

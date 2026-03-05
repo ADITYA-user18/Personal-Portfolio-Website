@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Aditya Wandakar - Developer Portfolio 🚀
 
-## Getting Started
+![Portfolio Preview Showcase](assets/preview.png) *(Note: Please add a cover image if available)*
 
-First, run the development server:
+Welcome to the repository for my personal developer portfolio, crafted with a high-end, cyberpunk-inspired futuristic design to best showcase my capabilities as a Full Stack Software Engineer and AI/CV enthusiast. The site is a dynamic, fluid, and hyper-optimized single-page experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dynamic Interactive Aesthetics**: Features subtle 3D background grids, glowing nodes, and particle simulators moving behind components.
+- **Scroll Engine Architecture**: An orchestrated snap-scroll architecture using `GSAP Engine` to give a feeling of sliding through a high-tech terminal system seamlessly.
+- **Custom Hardware Accelerated Cursor**: Implemented custom floating cursors with hover awareness.
+- **High-Performance Animations**: Used `Framer Motion` combined with `GSAP` for sophisticated staggers, masks, and depth-of-field component entrance/exit sequences.
+- **Responsive Architecture**: Fits elegantly across mobile, tablets, and huge desktop screens. Mobile layouts utilize scrollable nested sections allowing users to read content naturally without premature snapping.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack & Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This iteration leverages the absolute latest in web technology to maintain peak performance:
 
-## Learn More
+- **Framework:** [Next.js (v16.1.6)](https://nextjs.org/) (Turbopack)
+- **Frontend Core:** [React (v19.2.3)](https://react.dev/) + [React DOM](https://react.dev/)
+- **Styling Engine:** [Tailwind CSS (v4)](https://tailwindcss.com/)
+- **Animation Orchestration:** 
+  - [Framer Motion](https://www.framer.com/motion/)
+  - [GSAP (GreenSock Animation Platform)](https://gsap.com/)
+- **Icons & Assets:** [Lucide React](https://lucide.dev/) + [React Icons](https://react-icons.github.io/react-icons/)
+- **Utility:** `tailwind-merge` + `clsx` for dynamic tailwind generation without clashing.
+- **Compiler:** Babel React Compiler Plugins
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Running Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ADITYA-user18/your-repo-name.git
+   cd portfolio-website
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies:**
+   Make sure you have Node > 18.x and npm installed.
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure Highlights
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/src/app` - Contains the primary Next.js App Router layout and initial orchestrator pages.
+- `/src/components/sections` - Key areas of the portfolio: `Hero.jsx`, `About.jsx`, `Skills.jsx`, `Projects.jsx`, `Contact.jsx`.
+- `/src/components/shared` - Utilities like the custom GSAP `SliderEngine` for orchestrating section transitions and `CustomCursor.jsx`.
+
+## 👾 Known Constraints / Notes
+
+* **Images:** Ensure static files such as `/profile.png` are stored within the `public/` directory for production static rendering without 404 hitches.
+
+## 🤝 Connect With Me
+
+- **LinkedIn:** [Aditya Wandakar](https://www.linkedin.com/in/aditya-wandakar-875007343/)
+- **GitHub:** [@ADITYA-user18](https://github.com/ADITYA-user18)
+- **LeetCode:** [gVExFK60op](https://leetcode.com/u/gVExFK60op/)
+- **Email:** adityagw20@gmail.com
+
+---
+*Crafted with 🔥 and Next.js by Aditya Wandakar*
