@@ -70,8 +70,8 @@ const Hero = () => {
         />
       </div>
 
-        {/* 2. BACKGROUND IMAGE LAYER - Hidden entirely on mobile */}
-      <div className="absolute inset-0 z-10 w-full h-full pointer-events-none lg:pr-[5%] overflow-hidden hidden md:block">
+        {/* 2. BACKGROUND IMAGE LAYER */}
+      <div className="absolute inset-0 z-10 w-full h-full pointer-events-none lg:pr-[5%] overflow-hidden">
         <motion.div
            initial={{ opacity: 0, scale: 1.05 }}
            animate={{ opacity: 1, scale: 1 }}
@@ -92,8 +92,8 @@ const Hero = () => {
       </div>
 
       {/* 3. CONTENT LAYER */}
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-center">
-        <div className="max-w-4xl flex flex-col items-start w-full">
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-end md:justify-center pb-12 pt-32 md:pt-0">
+        <div className="max-w-4xl flex flex-col items-start w-full mt-auto md:mt-0">
           
           {/* Status Badge */}
           <motion.div
@@ -103,7 +103,7 @@ const Hero = () => {
             className="inline-flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full 
                        border border-white/20 bg-white/5 backdrop-blur-md 
                        text-white/80 font-mono text-[10px] md:text-xs tracking-widest 
-                       uppercase shadow-lg mb-6"
+                       uppercase shadow-lg mb-4"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -122,7 +122,7 @@ const Hero = () => {
                 initialDelay={500}
                 loop={false}
                 showCursor={false}
-                className="text-white font-black text-[clamp(3.5rem,14vw,10rem)] leading-[0.85] tracking-tight mb-2 m-0 p-0"
+                className="text-white font-black text-[clamp(4rem,15vw,10rem)] leading-[0.85] tracking-tight mb-0 md:mb-2 m-0 p-0"
               />
             </div>
             <div className="overflow-hidden h-fit">
@@ -135,7 +135,7 @@ const Hero = () => {
                 showCursor={true}
                 cursorCharacter="_"
                 cursorClassName="text-white ml-2"
-                className="text-transparent bg-clip-text bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] bg-gradient-to-r from-gray-400 via-white to-gray-400 font-extrabold font-outfit text-[clamp(2.5rem,11vw,10rem)] leading-[0.85] tracking-tight m-0 p-0"
+                className="text-transparent bg-clip-text bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] bg-gradient-to-r from-gray-400 via-white to-gray-400 font-extrabold font-outfit text-[clamp(2.9rem,11.5vw,10rem)] leading-[0.85] tracking-tight m-0 p-0"
               />
             </div>
           </div>
