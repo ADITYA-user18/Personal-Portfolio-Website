@@ -82,7 +82,7 @@ const Hero = () => {
             src="/profile.png"
             alt="Aditya Wandakar"
             fill
-            className="object-cover object-[center_top] md:object-contain md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
+            className="object-cover object-[center_top] md:object-contain md:object-[80%_bottom] transition-transform duration-1000 hover:scale-[1.02]"
             priority
           />
         </motion.div>
@@ -145,7 +145,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="max-w-xl mt-4 md:mt-6 relative z-30"
+            className="max-w-xl mt-4 md:-mt-4 lg:-mt-8 relative z-30"
           >
             <p className="text-sm md:text-lg text-gray-300 font-normal leading-relaxed mb-6 md:mb-8 drop-shadow-md m-0 p-0 pr-4">
               <strong className="text-white font-semibold flex mb-1">Full Stack Engineer</strong>
