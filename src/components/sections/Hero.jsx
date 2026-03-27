@@ -193,7 +193,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://leetcode.com/u/gVExFK60op/"
+              href="https://leetcode.com/u/AdityaGW/"
               target="_blank"
               className="p-3 md:p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
