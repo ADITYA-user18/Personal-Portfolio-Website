@@ -77,13 +77,13 @@ const Hero = () => {
            initial={{ opacity: 0, x: 50, scale: 1.05 }}
            animate={{ opacity: 1, x: 0, scale: 1 }}
            transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-40 md:opacity-100 pt-10 md:pt-0"
+          className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-30 md:opacity-100"
         >
             <Image
               src="/profile.png"
               alt="Aditya Wandakar"
               fill
-              className="object-contain object-[center_top] md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
+              className="object-contain object-top md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
               style={{
                 maskImage:
                   "linear-gradient(to top, transparent 10%, black 60%)",
@@ -93,8 +93,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-20 pb-10 flex flex-col justify-center min-h-full">
-        <div className="max-w-4xl flex flex-col items-start mt-8 md:mt-0">
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-end md:justify-center pb-24 md:pb-10">
+        <div className="max-w-4xl flex flex-col items-start w-full">
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
