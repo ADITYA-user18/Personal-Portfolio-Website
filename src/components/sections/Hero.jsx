@@ -70,55 +70,50 @@ const Hero = () => {
         />
       </div>
 
-        {/* 2. IMAGE CONTENT LAYER */}
-      <div className="absolute inset-0 z-10 flex justify-center lg:justify-end items-center pointer-events-none lg:pr-[5%]">
-
+        {/* 2. BACKGROUND IMAGE LAYER */}
+      <div className="absolute inset-0 z-10 w-full h-full pointer-events-none lg:pr-[5%] overflow-hidden">
         <motion.div
-           initial={{ opacity: 0, x: 50, scale: 1.05 }}
-           animate={{ opacity: 1, x: 0, scale: 1 }}
+           initial={{ opacity: 0, scale: 1.05 }}
+           animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-30 md:opacity-100 flex items-center justify-center pt-16 md:pt-0"
+           className="absolute inset-0 w-full h-full md:w-[65%] md:left-auto md:right-0 opacity-60 md:opacity-100"
         >
-            <Image
-              src="/profile.png"
-              alt="Aditya Wandakar"
-              fill
-              className="object-contain object-center md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
-              style={{
-                maskImage:
-                  "linear-gradient(to top, transparent 10%, black 60%)",
-              }}
-              priority
-            />
-          </motion.div>
-        </div>
-
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-between md:justify-center pb-24 md:pb-10 pt-16 md:pt-0">
+          <Image
+            src="/profile.png"
+            alt="Aditya Wandakar"
+            fill
+            className="object-cover object-[center_top] md:object-contain md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
+            priority
+          />
+        </motion.div>
         
-        {/* Status Badge - Pushed to TOP on mobile */}
-        <div className="max-w-4xl w-full flex justify-start">
+        {/* Subtle Dark Gradient Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-[#0a0a12]/80 to-transparent md:bg-gradient-to-r md:from-[#0a0a12] md:via-transparent md:to-transparent" />
+      </div>
+
+      {/* 3. CONTENT LAYER */}
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-end md:justify-center pb-12 pt-32 md:pt-0">
+        <div className="max-w-4xl flex flex-col items-start w-full mt-auto md:mt-0">
+          
+          {/* Status Badge */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             className="inline-flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full 
                        border border-white/20 bg-white/5 backdrop-blur-md 
-                       text-white/80 font-mono text-[9px] md:text-xs tracking-[0.3em] 
-                       uppercase shadow-lg mt-4 md:mb-8"
+                       text-white/80 font-mono text-[10px] md:text-xs tracking-widest 
+                       uppercase shadow-lg mb-4"
           >
-            <span className="relative flex h-3 w-3">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
             Full Stack Software Developer
           </motion.div>
-        </div>
 
-        {/* BOTTOM SECTION - Typography & Actions */}
-        <div className="max-w-4xl flex flex-col items-start w-full mt-auto">
-
-          {/* MAIN TYPOGRAPHY - Tight Leading */}
-          <div className="flex flex-col m-0 p-0 leading-none">
+          {/* MAIN TYPOGRAPHY */}
+          <div className="flex flex-col m-0 p-0 leading-tight">
             <div className="overflow-hidden h-fit">
               <TextType
                 text="ADITYA"
@@ -127,10 +122,10 @@ const Hero = () => {
                 initialDelay={500}
                 loop={false}
                 showCursor={false}
-                className="text-white font-extrabold text-[clamp(3.2rem,12vw,10rem)] leading-[0.75] tracking-[-0.05em] mb-2 md:mb-6 m-0 p-0"
+                className="text-white font-black text-[clamp(4rem,15vw,10rem)] leading-[0.85] tracking-tight mb-0 md:mb-2 m-0 p-0"
               />
             </div>
-            <div className="overflow-hidden h-fit mt-[-0.15em]">
+            <div className="overflow-hidden h-fit">
                 <TextType
                 text="WANDAKAR"
                 as="h1"
@@ -140,7 +135,7 @@ const Hero = () => {
                 showCursor={true}
                 cursorCharacter="_"
                 cursorClassName="text-white ml-2"
-                className="text-transparent bg-clip-text bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] bg-gradient-to-r from-gray-500 via-white to-gray-500 font-bold font-outfit text-[clamp(2.8rem,11.5vw,10rem)] leading-[0.75] tracking-[-0.05em] m-0 p-0"
+                className="text-transparent bg-clip-text bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] bg-gradient-to-r from-gray-400 via-white to-gray-400 font-extrabold font-outfit text-[clamp(2.9rem,11.5vw,10rem)] leading-[0.85] tracking-tight m-0 p-0"
               />
             </div>
           </div>
@@ -150,35 +145,28 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="max-w-2xl mt-4 md:mt-[-2rem] relative z-30"
+            className="max-w-xl mt-4 md:mt-6 relative z-30"
           >
-            <p className="text-sm md:text-2xl text-white/70 font-light leading-relaxed mb-6 md:mb-10 drop-shadow-lg m-0 p-0">
-              <span className="text-white font-medium">
-                Full Stack Engineer
-              </span>{" "}
-              specializing in
-              <span className="text-gray-200"> MERN stack development</span>,
-              <span className="text-gray-300"> Computer Vision</span>, and
-              <span className="text-gray-400"> Machine Learning</span>. I build
-              scalable, secure, and AI-powered applications designed for
-              real-world impact.
+            <p className="text-sm md:text-lg text-gray-300 font-normal leading-relaxed mb-6 md:mb-8 drop-shadow-md m-0 p-0 pr-4">
+              <strong className="text-white font-semibold flex mb-1">Full Stack Engineer</strong>
+              Specializing in MERN stack development, Computer Vision, and Machine Learning. 
+              I build scalable, secure, and AI-powered applications designed for real-world impact.
             </p>
 
             {/* ACTION BUTTONS */}
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-4">
               <motion.a
                 whileHover={{
                   scale: 1.05,
-                  borderColor: "rgba(255,255,255,0.6)",
-                  backgroundColor: "rgba(255,255,255,0.08)",
+                  backgroundColor: "rgba(255,255,255,0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://drive.google.com/file/d/1ugYxP3JdfVrHjog6gYAqpP0STjtoc3Bs/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-10 py-4 border border-white/20 text-white font-bold rounded-full backdrop-blur-sm transition-all flex items-center gap-3 bg-white/5 shadow-xl"
+                className="px-6 md:px-8 py-3 md:py-4 border border-white/20 text-white text-sm md:text-base font-semibold rounded-full backdrop-blur-sm transition-all flex items-center gap-2 bg-white/5 shadow-xl"
               >
-                Resume <Download size={18} />
+                Resume <Download size={16} />
               </motion.a>
             </div>
           </motion.div>
@@ -188,34 +176,28 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 0.8 }}
-            className="mt-6 md:mt-16 flex flex-wrap gap-4 md:gap-6 items-center border-t border-white/10 pt-4 md:pt-8"
+            className="mt-6 md:mt-10 flex flex-wrap gap-4 items-center border-t border-white/10 pt-4 md:pt-6 w-full"
           >
             <a
               href="https://github.com/ADITYA-user18"
               target="_blank"
-              className="p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all group border border-white/5"
+              className="p-3 md:p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
-              <Github
-                size={24}
-                className="group-hover:-translate-y-1 transition-transform"
-              />
+              <Github size={20} />
             </a>
             <a
               href="https://www.linkedin.com/in/aditya-wandakar-875007343/"
               target="_blank"
-              className="p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all group border border-white/5"
+              className="p-3 md:p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
-              <Linkedin
-                size={24}
-                className="group-hover:-translate-y-1 transition-transform"
-              />
+              <Linkedin size={20} />
             </a>
             <a
               href="https://leetcode.com/u/gVExFK60op/"
               target="_blank"
-              className="p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all group border border-white/5"
+              className="p-3 md:p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
-              <SiLeetcode className="text-2xl group-hover:-translate-y-1 transition-transform" />
+              <SiLeetcode className="text-xl" />
             </a>
           </motion.div>
         </div>
