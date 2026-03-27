@@ -82,7 +82,7 @@ const Hero = () => {
             src="/profile.png"
             alt="Aditya Wandakar"
             fill
-            className="object-cover object-[50%_15%] md:object-contain md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
+            className="object-cover object-[center_top] md:object-contain md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
             priority
           />
         </motion.div>
