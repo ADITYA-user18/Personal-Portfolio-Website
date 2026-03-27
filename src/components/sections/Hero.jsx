@@ -77,13 +77,13 @@ const Hero = () => {
            initial={{ opacity: 0, x: 50, scale: 1.05 }}
            animate={{ opacity: 1, x: 0, scale: 1 }}
            transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-60 md:opacity-80 lg:opacity-100"
+          className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-40 md:opacity-100 pt-10 md:pt-0"
         >
             <Image
               src="/profile.png"
               alt="Aditya Wandakar"
               fill
-              className="object-contain object-center md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
+              className="object-contain object-[center_top] md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
               style={{
                 maskImage:
                   "linear-gradient(to top, transparent 10%, black 60%)",
@@ -93,17 +93,17 @@ const Hero = () => {
           </motion.div>
         </div>
 
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-20 md:pt-0 pb-12 flex flex-col justify-center min-h-full">
-        <div className="max-w-4xl flex flex-col items-start mt-8 md:mt-0">
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-24 md:pt-0 pb-32 md:pb-12 flex flex-col justify-center min-h-full">
+        <div className="max-w-4xl flex flex-col items-start mt-4 md:mt-0">
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full 
+            className="inline-flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full 
                        border border-white/20 bg-white/5 backdrop-blur-md 
-                       text-white/80 font-mono text-xs tracking-[0.3em] 
-                       uppercase mb-8 shadow-lg"
+                       text-white/80 font-mono text-[9px] md:text-xs tracking-[0.3em] 
+                       uppercase mb-4 md:mb-8 shadow-lg"
           >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -122,7 +122,7 @@ const Hero = () => {
                 initialDelay={500}
                 loop={false}
                 showCursor={false}
-                className="text-white font-extrabold text-[clamp(4rem,15vw,10rem)] leading-[0.75] tracking-[-0.05em] mb-6 m-0 p-0"
+                className="text-white font-extrabold text-[clamp(4rem,15vw,10rem)] leading-[0.75] tracking-[-0.05em] mb-2 md:mb-6 m-0 p-0"
               />
             </div>
             <div className="overflow-hidden h-fit mt-[-0.15em]">
@@ -145,9 +145,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="max-w-2xl mt-6 md:mt-[-2rem] relative z-30"
+            className="max-w-2xl mt-4 md:mt-[-2rem] relative z-30"
           >
-            <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-10 drop-shadow-lg m-0 p-0">
+            <p className="text-sm md:text-2xl text-white/70 font-light leading-relaxed mb-6 md:mb-10 drop-shadow-lg m-0 p-0">
               <span className="text-white font-medium">
                 Full Stack Engineer
               </span>{" "}
@@ -183,7 +183,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 0.8 }}
-            className="mt-12 md:mt-16 flex flex-wrap gap-4 md:gap-6 items-center border-t border-white/10 pt-6 md:pt-8"
+            className="mt-6 md:mt-16 flex flex-wrap gap-4 md:gap-6 items-center border-t border-white/10 pt-4 md:pt-8"
           >
             <a
               href="https://github.com/ADITYA-user18"
