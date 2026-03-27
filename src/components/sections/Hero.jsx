@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full bg-[#0a0a12] overflow-y-auto overflow-x-hidden scrollable-section [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] select-none"
+      className="relative min-h-screen w-full flex items-center justify-center bg-[#0a0a12] overflow-hidden select-none"
     >
       {/* 1. BACKGROUND LAYER - 3D GRID ARCHITECTURE */}
       <div className="absolute inset-0 z-0 perspective-1000">
@@ -93,8 +93,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-24 md:pt-0 pb-32 md:pb-12 flex flex-col justify-center min-h-full">
-        <div className="max-w-4xl flex flex-col items-start mt-4 md:mt-0">
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-20 pb-10 flex flex-col justify-center min-h-full">
+        <div className="max-w-4xl flex flex-col items-start mt-8 md:mt-0">
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
