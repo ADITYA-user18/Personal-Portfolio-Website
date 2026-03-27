@@ -40,7 +40,7 @@ export default function About() {
     {
       school: "KLS VDIT, Haliyal",
       degree: "Bachelor of Engineering in Computer Science and Engineering",
-      score: "CGPA: 8.6 / 10.0",
+      score: "CGPA: 8.7 / 10.0",
       date: "2022 – 2026",
     },
     {

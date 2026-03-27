@@ -96,6 +96,7 @@ const SliderEngine = ({ children }) => {
       preventDefault: false, // allow native scroll
       onDown: (self) => {
         if (animating.current) return;
+        if (self.event.target.closest("a, button, [role='button']")) return;
         const scrollable = self.event.target.closest(".scrollable-section");
         if (scrollable) {
           // If we haven't reached the top of the scrollable section, do not slide
@@ -107,6 +108,7 @@ const SliderEngine = ({ children }) => {
       },
       onUp: (self) => {
         if (animating.current) return;
+        if (self.event.target.closest("a, button, [role='button']")) return;
         const scrollable = self.event.target.closest(".scrollable-section");
         if (scrollable) {
           // If we haven't reached the bottom of the scrollable section, do not slide

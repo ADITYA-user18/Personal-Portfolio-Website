@@ -39,7 +39,7 @@ const Hero = () => {
         
         {/* Dynamic mouse-follower spotlight */}
         <motion.div
-          className="pointer-events-none absolute inset-0 opacity-50 transition-opacity duration-500"
+          className="pointer-events-none absolute inset-0 opacity-50 transition-opacity duration-500 hidden md:block"
           style={{ background: backgroundGradient }}
         />
         
@@ -54,15 +54,15 @@ const Hero = () => {
           }}
         />
 
-        {/* Floating tech geometry nodes - removed heavy screen blends */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+        {/* Floating tech geometry nodes - disabled on mobile for perf */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-20 hidden md:block">
           <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] md:w-[200px] md:h-[200px] border border-white/10 rounded-full" />
           <div className="absolute top-[40%] right-[15%] w-[150px] h-[150px] md:w-[300px] md:h-[300px] border border-white/5 rounded-full" />
           <div className="absolute top-[60%] left-[30%] w-[100px] h-[100px] md:w-[150px] md:h-[150px] border border-white/10 rounded-full" />
         </div>
 
         {/* Glowing backdrop structural orb */}
-        <div className="absolute right-[-15%] top-[10%] w-[500px] md:w-[1000px] h-[500px] md:h-[1000px] bg-white/5 blur-[80px] md:blur-[120px] rounded-full opacity-20 pointer-events-none" />
+        <div className="absolute right-[-15%] top-[10%] w-[500px] md:w-[1000px] h-[500px] md:h-[1000px] bg-white/5 blur-[80px] md:blur-[120px] rounded-full opacity-20 pointer-events-none hidden md:block" />
 
         {/* Noise overlay - removed mix-blend-overlay for massive perf gain */}
         <div
@@ -83,7 +83,7 @@ const Hero = () => {
               src="/profile.png"
               alt="Aditya Wandakar"
               fill
-              className="object-contain object-center md:object-right-bottom transform-gpu drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-transform duration-1000 hover:scale-[1.02]"
+              className="object-contain object-center md:object-right-bottom transition-transform duration-1000 hover:scale-[1.02]"
               style={{
                 maskImage:
                   "linear-gradient(to top, transparent 10%, black 60%)",
