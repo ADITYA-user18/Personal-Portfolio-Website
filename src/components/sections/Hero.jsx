@@ -54,23 +54,19 @@ const Hero = () => {
           }}
         />
 
-        {/* Floating tech geometry nodes */}
+        {/* Floating tech geometry nodes - removed heavy screen blends */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-          <div className="absolute top-[20%] left-[10%] w-[200px] h-[200px] border border-white/10 rounded-full mix-blend-screen" />
-          <div className="absolute top-[40%] right-[15%] w-[300px] h-[300px] border border-white/5 rounded-full mix-blend-screen" />
-          <div className="absolute top-[60%] left-[30%] w-[150px] h-[150px] border border-white/10 rounded-full mix-blend-screen" />
+          <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] md:w-[200px] md:h-[200px] border border-white/10 rounded-full" />
+          <div className="absolute top-[40%] right-[15%] w-[150px] h-[150px] md:w-[300px] md:h-[300px] border border-white/5 rounded-full" />
+          <div className="absolute top-[60%] left-[30%] w-[100px] h-[100px] md:w-[150px] md:h-[150px] border border-white/10 rounded-full" />
         </div>
 
-        {/* Glowing backdrop structural orb representing the right side light */}
-        <div
-          className="absolute right-[-15%] top-[10%] w-[1000px] h-[1000px] 
-                        bg-white/5 blur-[200px] rounded-full opacity-30 mix-blend-screen pointer-events-none"
-        />
+        {/* Glowing backdrop structural orb */}
+        <div className="absolute right-[-15%] top-[10%] w-[500px] md:w-[1000px] h-[500px] md:h-[1000px] bg-white/5 blur-[80px] md:blur-[120px] rounded-full opacity-20 pointer-events-none" />
 
-        {/* Noise overlay */}
+        {/* Noise overlay - removed mix-blend-overlay for massive perf gain */}
         <div
-          className="absolute inset-0 opacity-[0.03] mix-blend-overlay
-                        bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
+          className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
         />
       </div>
 
@@ -144,12 +140,12 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* BIO SECTION - FORCEFUL PULL UP WITH NEGATIVE MARGIN */}
+          {/* BIO SECTION */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="max-w-2xl mt-[-1.5rem] md:mt-[-4.0rem] relative z-30"
+            className="max-w-2xl mt-6 md:mt-[-2rem] relative z-30"
           >
             <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-10 drop-shadow-lg m-0 p-0">
               <span className="text-white font-medium">
@@ -187,7 +183,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 0.8 }}
-            className="mt-16 flex gap-6 items-center border-t border-white/10 pt-8"
+            className="mt-12 md:mt-16 flex flex-wrap gap-4 md:gap-6 items-center border-t border-white/10 pt-6 md:pt-8"
           >
             <a
               href="https://github.com/ADITYA-user18"
