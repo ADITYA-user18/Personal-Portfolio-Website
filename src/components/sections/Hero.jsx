@@ -50,7 +50,7 @@ const Hero = () => {
             transform: "rotateX(60deg) scale(2)",
             background: "linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
-            maskImage: "linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%)"
+            maskImage: "linear-gradient(to top, rgba(74, 111, 245, 1) 0%, transparent 100%)"
           }}
         />
 
