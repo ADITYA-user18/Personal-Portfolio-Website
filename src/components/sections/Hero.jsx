@@ -103,7 +103,7 @@ const Hero = () => {
             className="inline-flex items-center gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full 
                        border border-white/20 bg-white/5 backdrop-blur-md 
                        text-white/80 font-mono text-[10px] md:text-xs tracking-widest 
-                       uppercase shadow-lg mb-4"
+                       uppercase shadow-lg mb-4 mt-4 md:mt-12"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
