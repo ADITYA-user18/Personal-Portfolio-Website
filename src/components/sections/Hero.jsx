@@ -147,8 +147,8 @@ const Hero = () => {
             transition={{ delay: 1.8, duration: 0.8 }}
             className="max-w-xl mt-4 md:-mt-4 lg:-mt-8 relative z-30"
           >
-            <p className="text-sm md:text-lg text-gray-300 font-normal leading-relaxed mb-6 md:mb-8 drop-shadow-md m-0 p-0 pr-4">
-              <strong className="text-white font-semibold flex mb-1">Full Stack Engineer</strong>
+            <p className="text-base md:text-2xl text-gray-300 font-light md:font-normal leading-relaxed mb-6 md:mb-8 drop-shadow-md m-0 p-0 pr-4">
+              <strong className="text-white font-semibold flex text-xl md:text-3xl mb-2">Full Stack Engineer</strong>
               Specializing in MERN stack development, Computer Vision, and Machine Learning. 
               I build scalable, secure, and AI-powered applications designed for real-world impact.
             </p>
