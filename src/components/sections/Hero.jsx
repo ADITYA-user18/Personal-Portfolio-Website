@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* 3. CONTENT LAYER */}
-      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-center pt-24 md:pt-0 pb-12 md:pb-0">
+      <div className="container mx-auto px-6 lg:px-20 relative z-20 h-full flex flex-col justify-center">
         <div className="max-w-4xl flex flex-col items-start w-full">
           
           {/* Status Badge */}
