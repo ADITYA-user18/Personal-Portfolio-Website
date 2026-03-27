@@ -7,14 +7,14 @@ import { SiLeetcode } from "react-icons/si";
 export default function Contact() {
   return (
     <section 
-      className="relative w-full h-screen pt-32 pb-20 px-6 lg:px-20 bg-[#050508] overflow-y-auto overflow-x-hidden scrollable-section [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col items-center justify-start md:justify-center"
+      className="relative w-full h-screen pt-24 md:pt-32 px-6 lg:px-20 bg-[#050508] overflow-y-auto overflow-x-hidden scrollable-section [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col items-center"
     >
       {/* Background radial gradient */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-white/5 blur-[150px] rounded-full mix-blend-screen" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto w-full text-center">
+      <div className="relative z-10 max-w-4xl mx-auto w-full text-center flex-grow flex flex-col justify-center pb-8 mt-auto md:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,9 +65,9 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-20 flex flex-wrap justify-center gap-6"
+          className="mt-12 md:mt-20 flex flex-wrap justify-center gap-4 md:gap-6 mb-12 flex-shrink-0"
         >
-          <a href="https://github.com/ADITYA-user18" target="_blank" className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-white/70 hover:text-white transition-all group">
+          <a href="https://github.com/ADITYA-user18" target="_blank" className="flex items-center gap-3 p-3 md:p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-white/70 hover:text-white transition-all group">
             <Github size={20} className="group-hover:-translate-y-1 transition-transform" />
             <span className="font-mono text-sm hidden sm:block">GitHub</span>
           </a>
@@ -87,8 +87,8 @@ export default function Contact() {
       </div>
 
       {/* Footer text */}
-      <div className="absolute bottom-8 text-center w-full">
-        <p className="text-white/30 text-xs font-mono uppercase tracking-widest">
+      <div className="relative text-center w-full z-10 pb-6 mt-auto">
+        <p className="text-white/30 text-xs font-mono uppercase tracking-widest px-4">
           © {new Date().getFullYear()} ADITYA WANDAKAR. All Rights Reserved.
         </p>
       </div>

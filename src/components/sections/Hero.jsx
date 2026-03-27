@@ -83,19 +83,19 @@ const Hero = () => {
            transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative w-full md:w-[85%] lg:w-[65%] h-full opacity-60 md:opacity-80 lg:opacity-100"
         >
-          <Image
-            src="/profile.png"
-            alt="Aditya Wandakar"
-            fill
-            className="object-contain object-center md:object-right-bottom transform-gpu drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-1000 hover:scale-[1.02]"
-            style={{
-              maskImage:
-                "linear-gradient(to top, transparent 10%, black 60%)",
-            }}
-            priority
-          />
-        </motion.div>
-      </div>
+            <Image
+              src="/profile.png"
+              alt="Aditya Wandakar"
+              fill
+              className="object-contain object-center md:object-right-bottom transform-gpu drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-transform duration-1000 hover:scale-[1.02]"
+              style={{
+                maskImage:
+                  "linear-gradient(to top, transparent 10%, black 60%)",
+              }}
+              priority
+            />
+          </motion.div>
+        </div>
 
       <div className="container mx-auto px-6 lg:px-20 relative z-20 pt-20 pb-10">
         <div className="max-w-4xl flex flex-col items-start">
