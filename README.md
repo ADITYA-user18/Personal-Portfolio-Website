@@ -1,6 +1,7 @@
 # Aditya Wandakar - Developer Portfolio 🚀
 
-![Portfolio Preview Showcase](assets/preview.png) *(Note: Please add a cover image if available)*
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/ce955a9a-1996-40fb-9d25-1bb1cf81f265" />
+
 
 Welcome to the repository for my personal developer portfolio, crafted with a high-end, cyberpunk-inspired futuristic design to best showcase my capabilities as a Full Stack Software Engineer and AI/CV enthusiast. The site is a dynamic, fluid, and hyper-optimized single-page experience.
 
