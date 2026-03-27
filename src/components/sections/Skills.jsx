@@ -130,8 +130,6 @@ const Skills = () => {
         </h2>
       </div>
 
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
-
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
         <div className="mb-16 md:mb-24 flex flex-col">
           <h2 className="text-6xl md:text-8xl font-black font-outfit text-white tracking-tighter leading-none uppercase">
