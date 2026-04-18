@@ -12,12 +12,21 @@ const Hero = () => {
   const mouseY = useMotionValue(0);
 
   useEffect(() => {
+    if (window.innerWidth <= 768) return;
+    
+    let rafId = null;
     const updateMousePosition = (e) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        mouseX.set(e.clientX);
+        mouseY.set(e.clientY);
+      });
     };
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [mouseX, mouseY]);
 
   const backgroundGradient = useMotionTemplate`
@@ -161,7 +170,7 @@ const Hero = () => {
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://drive.google.com/file/d/1ugYxP3JdfVrHjog6gYAqpP0STjtoc3Bs/view?usp=sharing"
+                href="https://drive.google.com/file/d/1xuH2NJudlGuSLeSS9uogW8n1aquIABAg/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 md:px-8 py-3 md:py-4 border border-white/20 text-white text-sm md:text-base font-semibold rounded-full backdrop-blur-sm transition-all flex items-center gap-2 bg-white/5 shadow-xl"
@@ -193,7 +202,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://leetcode.com/u/gVExFK60op/"
+              href="https://leetcode.com/u/AdityaGW/"
               target="_blank"
               className="p-3 md:p-4 rounded-full bg-white/5 text-white/50 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
@@ -205,5 +214,4 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
+export default React.memo(Hero);

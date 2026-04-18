@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, GraduationCap, Award, MapPin } from "lucide-react";
 
-export default function About() {
+const About = React.memo(function About() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -65,13 +65,24 @@ export default function About() {
     "Cisco Networking Academy: Python Programming Basics",
   ];
 
+  const achievements = [
+    {
+      title: "Patent Publication",
+      description: "Crowd Sense: A Real-Time System for Crowd Analytics (App No: 202641002836). Developed an efficient method using MobileNet-SSD and GenderNet for real-time demographic analysis and automated ad selection.",
+    },
+    {
+      title: "Problem Solving",
+      description: "Solved 100+ problems on LeetCode focusing on Data Structures and Algorithms (DSA).",
+    },
+  ];
+
   return (
     <section 
       ref={containerRef}
       className="relative h-screen pt-32 pb-20 px-6 lg:px-20 bg-[#0a0a12] overflow-y-auto overflow-x-hidden scrollable-section [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hidden md:block">
         <div className="absolute right-[-10%] top-[20%] w-[500px] h-[500px] bg-white/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
         <div className="absolute left-[-10%] bottom-[10%] w-[600px] h-[600px] bg-white/5 blur-[130px] rounded-full mix-blend-screen opacity-50" />
       </div>
@@ -178,8 +189,32 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* Section 4: Achievements */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full"
+          >
+            <h3 className="text-3xl font-outfit font-bold text-white mb-10 flex items-center gap-3 border-b border-white/10 pb-4">
+              <Award className="text-white/50" /> Achievements
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {achievements.map((ach, idx) => (
+                <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/[0.07] transition-all">
+                  <h4 className="text-xl font-outfit text-white font-bold mb-4">{ach.title}</h4>
+                  <p className="text-white/80 text-base leading-relaxed">{ach.description}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
   );
-}
+});
+
+export default About;

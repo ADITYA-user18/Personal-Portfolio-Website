@@ -75,7 +75,7 @@ export default function Contact() {
             <Linkedin size={20} className="group-hover:-translate-y-1 transition-transform" />
             <span className="font-mono text-sm hidden sm:block">LinkedIn</span>
           </a>
-          <a href="https://leetcode.com/u/gVExFK60op/" target="_blank" className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-white/70 hover:text-white transition-all group">
+          <a href="https://leetcode.com/u/AdityaGW/" target="_blank" className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-white/70 hover:text-white transition-all group">
             <SiLeetcode className="text-xl group-hover:-translate-y-1 transition-transform" />
             <span className="font-mono text-sm hidden sm:block">LeetCode</span>
           </a>

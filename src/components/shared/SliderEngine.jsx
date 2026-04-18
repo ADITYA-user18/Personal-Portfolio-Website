@@ -66,7 +66,6 @@ const SliderEngine = ({ children }) => {
       tl.to(currentSection, {
         yPercent: isDown ? -30 : 30, // Slight movement back
         scale: 0.9, // Shrink effect
-        filter: "blur(10px)", // Depth of field
         autoAlpha: 0,
       })
         .to(
@@ -86,7 +85,7 @@ const SliderEngine = ({ children }) => {
         );
 
       // Clean up previous section
-      tl.set(currentSection, { scale: 1, filter: "blur(0px)" });
+      tl.set(currentSection, { scale: 1 });
     };
 
     const obs = Observer.create({
@@ -215,11 +214,11 @@ const SliderEngine = ({ children }) => {
         <div
           key={i}
           ref={(el) => (sectionsRef.current[i] = el)}
-          className="absolute inset-0 w-full h-full overflow-hidden will-change-transform"
+          className="absolute inset-0 w-full h-full overflow-hidden"
         >
           <div
             ref={(el) => (contentRef.current[i] = el)}
-            className="w-full h-full will-change-transform"
+            className="w-full h-full"
           >
             {child}
           </div>

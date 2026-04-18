@@ -10,7 +10,19 @@ const CustomCursor = () => {
   
   const [isHovered, setIsHovered] = useState(false);
 
+  const [isDesktop, setIsDesktop] = useState(true);
+
   useEffect(() => {
+    const checkDevice = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
+    if (window.innerWidth <= 768) {
+      return () => window.removeEventListener("resize", checkDevice);
+    }
+
     const updateMousePosition = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -24,14 +36,17 @@ const CustomCursor = () => {
       }
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mouseover", handleHover);
+    window.addEventListener("mousemove", updateMousePosition, { passive: true });
+    window.addEventListener("mouseover", handleHover, { passive: true });
 
     return () => {
+      window.removeEventListener("resize", checkDevice);
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleHover);
     };
-  }, []);
+  }, [mouseX, mouseY]);
+
+  if (!isDesktop) return null;
 
   return (
     <>

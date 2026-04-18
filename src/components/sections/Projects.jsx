@@ -5,6 +5,16 @@ import { Github, ExternalLink, Code2, Database, BrainCircuit, ShieldAlert, Users
 
 const projectsData = [
   {
+    title: "AutoYOLO - Neural Intelligence Platform",
+    description: "A production-grade AI optimization and Dataset Intelligence platform. Replaces manual hyperparameter tuning and dataset verification with a deeply integrated Neural Workflow Agent. Features Neural Audit, Dataset Repair, Smart HPO, and Automated Code Generation for Ultralytics YOLO models.",
+    tech: ["Vite", "React", "FastAPI", "Gemini", "Vercel"],
+    github: null,
+    live: "https://intelligent-yolo-analyzer.vercel.app/",
+    icon: <Database size={40} className="text-white" />,
+    color: "from-blue-400 to-indigo-600",
+    bgAccent: "bg-blue-500/10"
+  },
+  {
     title: "REV-AI – Autonomous Code Review Agent",
     description: "Engineered an event-driven automation tool using GitHub Webhooks and Google Gemini AI for real-time logic auditing. Reduced pre-production bug density by 40% by enforcing structured JSON security auditing and vulnerability detection.",
     tech: ["MERN Stack", "GenAI", "GitHub API"],
@@ -56,15 +66,15 @@ const projectsData = [
   }
 ];
 
-const ProjectCard = ({ project, index }) => {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+const ProjectCard = React.memo(({ project, index }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  function handleMouseMove({ currentTarget, clientX, clientY }) {
+  const handleMouseMove = React.useCallback(({ currentTarget, clientX, clientY }) => {
     let { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
-  }
+  }, [mouseX, mouseY]);
 
   return (
     <motion.div
@@ -136,9 +146,10 @@ const ProjectCard = ({ project, index }) => {
       <div className={`absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-700 bg-gradient-to-r ${project.color}`} />
     </motion.div>
   );
-};
+});
+ProjectCard.displayName = "ProjectCard";
 
-export default function Projects() {
+export default React.memo(function Projects() {
   const sectionRef = useRef(null);
 
   return (
@@ -171,4 +182,4 @@ export default function Projects() {
       </div>
     </section>
   );
-}
+});

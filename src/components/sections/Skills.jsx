@@ -41,15 +41,16 @@ const skillData = [
   }
 ];
 
-const SkillCard = ({ group }) => {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+const SkillCard = React.memo(({ group }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  function handleMouseMove({ currentTarget, clientX, clientY }) {
+  const handleMouseMove = React.useCallback(({ currentTarget, clientX, clientY }) => {
+    if (window.innerWidth <= 768) return;
     let { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
-  }
+  }, [mouseX, mouseY]);
 
   return (
     <motion.div
@@ -101,9 +102,10 @@ const SkillCard = ({ group }) => {
       <div className={`absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-700 bg-gradient-to-r ${group.color}`} />
     </motion.div>
   );
-};
+});
+SkillCard.displayName = "SkillCard";
 
-const Skills = () => {
+const Skills = React.memo(() => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -148,6 +150,6 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Skills;
