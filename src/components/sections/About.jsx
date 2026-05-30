@@ -17,7 +17,7 @@ const About = React.memo(function About() {
     {
       role: "Computer Vision Intern",
       company: "DocketRun Tech Pvt. Ltd., Hubli",
-      date: "Ongoing",
+      date: "Jan 26 - May 26",
       points: [
         "Developing real-time AI solutions using YOLO & OpenCV for industrial object detection and tracking.",
         "Implementing model optimization techniques to improve inference speed for large-scale industrial use cases.",
@@ -27,7 +27,7 @@ const About = React.memo(function About() {
     {
       role: "MERN Stack Developer Intern",
       company: "Genesis Academy, Bangalore (Remote)",
-      date: "Ongoing",
+      date: "Jan 26 - May 26",
       points: [
         "Building full-stack applications using MongoDB, Express, React, and Node.js with secure REST API architectures.",
         "Developing responsive UIs and implementing robust authentication protocols for enterprise-grade software.",
@@ -40,7 +40,7 @@ const About = React.memo(function About() {
     {
       school: "KLS VDIT, Haliyal",
       degree: "Bachelor of Engineering in Computer Science and Engineering",
-      score: "CGPA: 8.7 / 10.0",
+      score: "CGPA: 9.01 / 10.0",
       date: "2022 – 2026",
     },
     {
