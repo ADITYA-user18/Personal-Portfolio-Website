@@ -5,6 +5,16 @@ import { Github, ExternalLink, Code2, Database, BrainCircuit, ShieldAlert, Users
 
 const projectsData = [
   {
+    title: "ResQAI – Offline AI Emergency Assistant",
+    description: "A local-first, privacy-focused AI companion providing critical first-aid and survival instructions offline. Powered by a RAG Knowledge Base, Ollama (TinyLlama/Phi3), and FAISS vector indexing.",
+    tech: ["React", "FastAPI", "Ollama", "FAISS"],
+    github: "https://github.com/ADITYA-user18/ResQAI-Offiline-AI-Emergency-and-Survival-Assistant-",
+    live: null,
+    icon: <ShieldAlert size={40} className="text-emerald-400" />,
+    color: "from-emerald-400 to-teal-600",
+    bgAccent: "bg-emerald-500/10"
+  },
+  {
     title: "AutoYOLO - Neural Intelligence Platform",
     description: "A production-grade AI optimization and Dataset Intelligence platform. Replaces manual hyperparameter tuning and dataset verification with a deeply integrated Neural Workflow Agent. Features Neural Audit, Dataset Repair, Smart HPO, and Automated Code Generation for Ultralytics YOLO models.",
     tech: ["Vite", "React", "FastAPI", "Gemini", "Vercel"],
