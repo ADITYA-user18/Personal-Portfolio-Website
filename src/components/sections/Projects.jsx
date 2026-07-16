@@ -5,6 +5,16 @@ import { Github, ExternalLink, Code2, Database, BrainCircuit, ShieldAlert, Users
 
 const projectsData = [
   {
+    title: "Railway Track Obstacle Detection System",
+    description: "A highly optimized, computer vision pipeline designed to prevent railway accidents by detecting fallen trees, vehicles, animals, and other obstacles on tracks in real-time.",
+    tech: ["YOLOv11", "Computer Vision", "Python"],
+    github: "https://github.com/ADITYA-user18/-Railway-Track-Obstacle-Detection-System",
+    live: null,
+    icon: <ShieldAlert size={40} className="text-red-400" />,
+    color: "from-red-400 to-orange-600",
+    bgAccent: "bg-red-500/10"
+  },
+  {
     title: "ResQAI – Offline AI Emergency Assistant",
     description: "A local-first, privacy-focused AI companion providing critical first-aid and survival instructions offline. Powered by a RAG Knowledge Base, Ollama (TinyLlama/Phi3), and FAISS vector indexing.",
     tech: ["React", "FastAPI", "Ollama", "FAISS"],

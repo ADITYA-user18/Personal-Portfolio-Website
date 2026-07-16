@@ -17,7 +17,7 @@ const About = React.memo(function About() {
     {
       role: "Computer Vision Intern",
       company: "DocketRun Tech Pvt. Ltd., Hubli",
-      date: "Jan 26 - May 26",
+      date: "Jan 26 - July 26",
       points: [
         "Developing real-time AI solutions using YOLO & OpenCV for industrial object detection and tracking.",
         "Implementing model optimization techniques to improve inference speed for large-scale industrial use cases.",

@@ -14,7 +14,7 @@ const skillData = [
   {
     category: "Languages",
     icon: <Code2 size={28} />,
-    skills: ["JavaScript (ES6+)", "Python"],
+    skills: ["JavaScript (ES6+)", "Python", "SQL"],
     description: "The foundation of logic and scripting.",
     color: "from-white to-gray-400"
   },
@@ -35,7 +35,7 @@ const skillData = [
   {
     category: "Infrastructure",
     icon: <Layers size={28} />,
-    skills: ["MongoDB", "Git","GitHub", "Docker", "Postman", "Vercel", "NPM", "Render"],
+    skills: ["MongoDB", "MySQL", "Redis", "Git", "GitHub", "Docker", "Postman", "Vercel", "NPM", "Render"],
     description: "Deployment, Cloud & CI/CD.",
     color: "from-white to-gray-500"
   }
