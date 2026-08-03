@@ -170,7 +170,7 @@ const Hero = () => {
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://drive.google.com/file/d/1NHELii3BgstBYiwuws4hdzgA6_G35a_R/view?usp=sharing"
+                href="https://drive.google.com/file/d/1IF_X5aDgkokHGI5cVHmjPz2iLIn0rtEX/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 md:px-8 py-3 md:py-4 border border-white/20 text-white text-sm md:text-base font-semibold rounded-full backdrop-blur-sm transition-all flex items-center gap-2 bg-white/5 shadow-xl"
